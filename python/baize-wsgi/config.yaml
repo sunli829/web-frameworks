@@ -2,7 +2,6 @@ framework:
   website: baize.aber.sh
   version: 0.14
 
-
 command: >
   gunicorn \
     --log-level warning \
