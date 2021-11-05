@@ -4,10 +4,6 @@ import logging
 logging.disable()
 
 import falcon
-from meinheld import patch
-
-patch.patch_all()
-
 
 class EmptyResponse:
     def on_get(self, req, resp):

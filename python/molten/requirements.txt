@@ -1,2 +1,3 @@
 molten>=1.0,<1.1
-
+gevent
+gunicorn[gevent]
