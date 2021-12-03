@@ -5,7 +5,7 @@ framework:
 deps:
   - nginx
 build_deps:
-  - icu-dev
+  - libicu-dev
 
 php_mod:
   - intl

@@ -5,7 +5,7 @@ framework:
 
 build_deps:
   - libevent-dev
-  - icu-dev
+  - libicu-dev
   - libssl-dev
 
 php_ext:
