@@ -2,6 +2,9 @@ framework:
   website: docs.mezzio.dev
   version: 3.7
 
+deps:
+  - nginx
+
 before_command:
   - mkdir /usr/src/app/data
   - chmod 777 -R /usr/src/app/data

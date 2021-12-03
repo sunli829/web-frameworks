@@ -2,6 +2,10 @@ framework:
   github: bearframework/bearframework
   version: 1.7
 
+
+deps:
+  - nginx
+
 php_mod:
   - gd
 

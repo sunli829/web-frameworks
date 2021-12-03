@@ -2,6 +2,8 @@ framework:
   website: phalcon.io
   version: 5.0
 
+deps:
+  - nginx
 php_ext:
   - psr
 

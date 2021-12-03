@@ -2,6 +2,9 @@ framework:
   website: ubiquity.kobject.net
   version: 2.3
 
+deps:
+  - nginx
+
 before_command:
   - composer update
   - chmod +x vendor/bin/Ubiquity

@@ -1,3 +1,6 @@
 framework:
   github: chubbyphp/chubbyphp-framework
   version: 4.0
+
+deps:
+  - nginx

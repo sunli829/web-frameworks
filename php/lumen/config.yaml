@@ -1,3 +1,6 @@
 framework:
   website: lumen.laravel.com
   version: 8.3
+
+deps:
+  - nginx

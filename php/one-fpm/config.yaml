@@ -5,6 +5,8 @@ framework:
 php_mod:
   - bcmath
 
+deps:
+  - nginx
 before_command:
   - mkdir -p App/RunCache
   - chmod 777 App/RunCache

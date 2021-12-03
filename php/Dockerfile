@@ -1,10 +1,7 @@
-FROM php:8.1-fpm-alpine
+FROM php:8.1-fpm
 
-RUN apk add git zlib-dev libzip-dev build-base autoconf nginx openrc curl-dev icu-dev oniguruma-dev php8-pear {{#deps}} {{{.}}} {{/deps}}
-
+RUN apt-get -qq update && apt-get -qy install build-essential libzip-dev {{#deps}} {{{.}}} {{/deps}}
 WORKDIR /usr/src/app
-
-RUN ln -sfv /usr/bin/pecl8  /usr/local/bin/pecl
 
 RUN docker-php-ext-install zip opcache
 
@@ -72,7 +69,7 @@ RUN composer dumpautoload -o
   
   RUN rm -fr /usr/local/etc/php-fpm.d/zz-docker.conf
   
-  RUN echo -e 'server {\n\
+  RUN echo "server {\n\
       {{#docroot}}
         root {{{.}}};\n\
       {{/docroot}}
@@ -85,22 +82,22 @@ RUN composer dumpautoload -o
       {{/nginx_conf}}
       {{^nginx_conf}}
         location / {\n\
-          try_files $uri $uri/ /index.php;\n\
+          try_files \$uri \$uri/ /index.php;\n\
           fastcgi_pass unix:/var/run/php-fpm.sock;\n\
-          fastcgi_param   SCRIPT_FILENAME         $document_root/index.php;\n\
+          fastcgi_param   SCRIPT_FILENAME         \$document_root/index.php;\n\
           include fastcgi_params;\n\
         }\n\
       {{/nginx_conf}}
-  }\n'\
-  > /etc/nginx/http.d/default.conf
+  }\n"\
+  > /etc/nginx/sites-enabled/default.conf
   
-  RUN echo -e 'opcache.enable=1\n\
+  RUN echo "opcache.enable=1\n\
   opcache.memory_consumption=512\n\
   opcache.interned_strings_buffer=64\n\
   opcache.max_accelerated_files=32531\n\
   opcache.validate_timestamps=0\n\
   opcache.save_comments=1\n\
-  opcache.fast_shutdown=0\n'\
+  opcache.fast_shutdown=0\n"\
   >> /usr/local/etc/php/conf.d/docker-php-ext-opcache.ini
   
   CMD /usr/local/sbin/php-fpm --daemonize; nginx -g "daemon off;"

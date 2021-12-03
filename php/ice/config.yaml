@@ -9,6 +9,8 @@ build_deps:
 environment:
   LDFLAGS: -lexecinfo
 
+deps:
+  - nginx
 php_ext:
   - ice
 

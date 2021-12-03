@@ -2,6 +2,9 @@ framework:
   website: laravel.com
   version: 8.74
 
+deps:
+  - nginx
+
 environment:
   APP_ENV: production
   APP_DEBUG: false

@@ -2,6 +2,8 @@ framework:
   website: codeigniter.com
   version: 4.1
 
+deps:
+  - nginx
 build_deps:
   - icu-dev
 
