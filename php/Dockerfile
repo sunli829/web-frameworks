@@ -10,7 +10,7 @@ RUN docker-php-ext-install zip opcache
 {{/environment}}
 
 {{#build_deps}}
-  RUN apt-get -qy {{{.}}}
+  RUN apt-get -qy install {{{.}}}
 {{/build_deps}}
 
 {{#php_mod}}
