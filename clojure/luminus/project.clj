@@ -1,6 +1,6 @@
 (defproject luminus "0.1.0-SNAPSHOT"
 
-  :dependencies [[luminus/lein-template "4.25"]
+  :dependencies [[luminus/lein-template "4.26"]
                  [ch.qos.logback/logback-classic "1.2.7"]
                  [cheshire "5.10.1"]
                  [clojure.java-time "0.3.3"]
@@ -53,7 +53,7 @@
                                  [ring/ring-devel "1.9.4"]
                                  [ring/ring-mock "0.4.0"]]
                   :plugins      [[com.jakemccrary/lein-test-refresh "0.25.0"]
-                                 [jonase/eastwood "0.9.9"]] 
+                                 [jonase/eastwood "1.0.0"]] 
                   
                   :source-paths ["env/dev/clj" ]
                   :resource-paths ["env/dev/resources"]

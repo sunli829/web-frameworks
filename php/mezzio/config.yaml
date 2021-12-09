@@ -1,9 +1,6 @@
 framework:
   website: docs.mezzio.dev
-  version: 3.7
-
-deps:
-  - nginx
+  version: 3.8
 
 before_command:
   - mkdir /usr/src/app/data
